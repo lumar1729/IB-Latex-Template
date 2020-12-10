@@ -7,6 +7,8 @@
 \usepackage{makeidx}
 \usepackage{mathptmx}
 \usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{indentfirst}
 \global\parskip 6pt
 \titleformat{\title}
 	{\normalfont\fontsize{18}{15}\bfseries}{\thetitle}{1em}{}
@@ -14,7 +16,7 @@
 	{\normalfont\fontsize{18}{15}\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}
 	{\normalfont\fontsize{14}{15}\bfseries}{\thesubsection}{1em}{}
-\newcommand{\thisWillProbablyChange}{A small introduction to Section }
+\doublespacing
 \begin{document}
 \begin{titlepage}
 	\begin{center}
@@ -34,33 +36,6 @@
 	\vspace*{\fill}
 \end{center}
 \newpage
-\section{Section}
-	\thisWillProbablyChange 1 of this paper. \cite{First Fake Source}
-	\subsection{Subsection}
-	Some text.
-	\subsection{Subsection}
-	Some text.
-	\subsection{Subsection}
-	Some text.
-\section{Section}
-	\thisWillProbablyChange 2 of this paper. \cite{Second Fake Source}
-	\subsection{Subsection}
-	Some text.
-	\subsection{Subsection}
-	Some text.
-	\subsection{Subsection}
-	Some text.
-\section{Section}
-	\thisWillProbablyChange 3 of this paper. \cite{Third Fake Source}
-	\subsection{Subsection}
-	Some text.
-	\subsection{Subsection}
-	Some text.
-	\subsection{Subsection}
-	Some text.
 \begin{thebibliography}{99}
-		\bibitem{First Fake Source} First Fake source
-		\bibitem{Second Fake Source} Second Fake Source
-		\bibitem{Third Fake Source} Third Fake Source
 \end{thebibliography}
 \end{document}
