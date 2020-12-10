@@ -1,0 +1,94 @@
+\documentclass{article}[12]
+\usepackage{graphics}
+\usepackage{amsmath}
+\usepackage[top=4cm, bottom=4cm, left=3.5cm, right=3.5cm]{geometry}
+\usepackage{moresize}
+\usepackage{anyfontsize}
+\usepackage{makeidx}
+\usepackage{mathptmx}
+\usepackage{titlesec}
+\usepackage{lipsum}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\global\parskip 6pt
+\titleformat{\title}
+	{\normalfont\fontsize{18}{15}\bfseries}{\thetitle}{1em}{}
+\titleformat{\section}
+	{\normalfont\fontsize{18}{15}\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+	{\normalfont\fontsize{14}{15}\bfseries}{\thesubsection}{1em}{}
+\newcommand{\thisWillProbablyChange}{A small introduction to Section }
+\begin{document}
+\begin{titlepage}
+	\begin{center}
+		\topskip0pt
+		\vspace*{\fill}
+		\Huge{This is a Sample Title}
+		\vskip .10in
+		\normalsize{Author's Name}
+		\date{today}
+		\vspace*{\fill}
+	\end{center}
+\end{titlepage}
+\begin{center}
+	\topskip0pt
+	\vspace*{\fill}
+	\tableofcontents
+	\vspace*{\fill}
+\end{center}
+\newpage
+\section{Section}
+	\thisWillProbablyChange 1 of this paper. \cite{First Fake Source}
+	\subsection{Subsection}
+	\lipsum[1-1]
+	\subsection{Subsection}
+	\lipsum[2-3]
+	\subsection{Subsection}
+	\lipsum[3-3]
+\section{Section}
+	\thisWillProbablyChange 2 of this paper. \cite{Second Fake Source}
+	\subsection{Subsection}
+	\lipsum[4-6]
+	\subsection{Subsection}
+	\lipsum[1-1]
+	\[ x^n + y^n = z^n \]
+	\subsection{Subsection}
+	\lipsum[6-6]
+\section{Section}
+	\thisWillProbablyChange 3 of this paper. \cite{Third Fake Source}
+	\subsection{Subsection}
+	\lipsum[7-7]
+	\begin{center}
+		\tdplotsetmaincoords{70}{0}
+		\begin{tikzpicture}[tdplot_main_coords]
+		\centering
+		\def\RI{2}
+		\def\RII{1.25}
+
+		\draw[thick] (\RI,0)
+		  \foreach \x in {0,300,240,180} { --  (\x:\RI) node at (\x:\RI) (R1-\x) {} };
+		\draw[dashed,thick] (R1-0.center)
+		  \foreach \x in {60,120,180} { --  (\x:\RI) node at (\x:\RI) (R1-\x) {} };
+		\path[fill=gray!30] (\RI,0)
+		  \foreach \x in {0,60,120,180,240,300} { --  (\x:\RI)};
+
+		\begin{scope}[yshift=2cm]
+		\draw[thick,fill=gray!30,opacity=0.2] (\RII,0)
+		  \foreach \x in {0,60,120,180,240,300,360}
+			{ --  (\x:\RII) node at (\x:\RII) (R2-\x) {}};
+		\end{scope}
+
+		\foreach \x in {0,180,240,300} { \draw (R1-\x.center)--(R2-\x.center); };
+		\foreach \x in {60,120} { \draw[dashed] (R1-\x.center)--(R2-\x.center); };
+		\end{tikzpicture}
+	\end{center}
+	\subsection{Subsection}
+	\lipsum[8-9]
+	\subsection{Subsection}
+	\lipsum[10-10]
+\begin{thebibliography}{99}
+		\bibitem{First Fake Source} First Fake source
+		\bibitem{Second Fake Source} Second Fake Source
+		\bibitem{Third Fake Source} Third Fake Source
+\end{thebibliography}
+\end{document}
